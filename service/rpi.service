@@ -1,0 +1,14 @@
+[Unit]
+Description=Run telegram bot
+After=network.target
+
+[Service]
+ExecStart==/usr/bin/python3 /home/pi/rpi-security/main.py -c /home/pi/rpi-security/config/rpi-security.conf
+WorkingDirectory=/home/pi/rpi-security/
+StandardOutput=null
+StandardError=null
+Restart=always
+User=motion
+
+[Install]
+WantedBy=multi-user.target
